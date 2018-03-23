@@ -1,0 +1,115 @@
+@import (reference) '../../less/variables.less';
+
+section#points {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 15em;
+	transform: translateX(-14em);
+	transition: transform 0.125s ease;
+
+	&:hover {
+		transform: translateX(0);
+	}
+
+	form {
+		margin-bottom: 1em;
+
+		>span {
+			display: block;
+			color: @white;
+			background-color: @medium;
+			padding: 0.375em;
+			font-size: 0.875em;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		div {
+			input {
+				&:first-child {
+					padding-left: 1.25em;
+				}
+				&:last-child {
+					padding-right: 1.25em;
+				}
+			}
+
+			button {
+				&:first-child {
+					padding-left: 1.875em;
+				}
+				&:last-child {
+					padding-right: 1.875em;
+				}
+			}
+		}
+
+		input, button {
+			display: inline-block;
+			width: 50%;
+			background-color: @dark;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		input {
+			color: @white;
+			padding: 0.75em 0.5em;
+		}
+
+		button {
+			color: @dark;
+			padding: 1.125em 0.75em;
+			background-color: @white;
+			font-size: 0.75em;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		&.heading, &.add-point {
+			button {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	div#points {
+		>div {
+			background-color: @dark;
+			border-bottom: 1px solid @darker;
+			cursor: pointer;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			&.selected {
+				background-color: @white;
+
+				>span {
+					color: @dark;
+				}
+			}
+
+			>span {
+				display: inline-block;
+				color: @light;
+				width: 50%;
+				padding: 0.75em 0.5em;
+				text-align: center;
+				box-sizing: border-box;
+
+				&:first-child {
+					padding-left: 1.25em;
+				}
+
+				&:last-child {
+					padding-right: 1.25em;
+				}
+			}
+		}
+	}
+}
